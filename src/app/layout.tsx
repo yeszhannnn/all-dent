@@ -25,7 +25,8 @@ export const metadata: Metadata = {
   keywords:
     "стоматология Астана, имплантация, брекеты, Севоран, лечение зубов, ALL DENT",
   icons: {
-    icon: "/favicon.svg",
+    icon: [{ url: "/image.png", type: "image/png" }],
+    apple: "/image.png",
   },
   openGraph: {
     title: "ALL DENT — Современная стоматология в Астане",
