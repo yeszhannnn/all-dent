@@ -20,13 +20,10 @@ import {
 } from "@/components/ui/dialog";
 import { AnimatedContent } from "@/components/ui/animated-content";
 import { AnimatedText } from "@/components/animated-text";
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { LiquidGlassButton } from "@/components/ui/liquid-glass-button";
 import { LiquidGlassCard } from "@/components/ui/liquid-glass-card";
 import { PricingCard } from "@/components/ui/pricing-card";
-import { DisplayCard } from "@/components/ui/display-card";
 import { GlareHover } from "@/components/ui/glare-hover";
-import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Card } from "@/components/ui/card";
 import {
   MessageCircle,
@@ -37,8 +34,6 @@ import {
   AlignCenter,
   Crown,
   Cloud,
-  Search,
-  Phone,
   Info,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -55,16 +50,6 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export default function ServicesPage() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const filteredCategories = searchQuery
-    ? SERVICE_CATEGORIES.map((cat) => ({
-        ...cat,
-        items: cat.items.filter((item) =>
-          item.name.toLowerCase().includes(searchQuery.toLowerCase())
-        ),
-      })).filter((cat) => cat.items.length > 0)
-    : SERVICE_CATEGORIES;
 
   const scrollToCategory = (id: string) => {
     setActiveCategory(id);
@@ -91,19 +76,6 @@ export default function ServicesPage() {
             <p className="text-lg text-steel-500 max-w-2xl mb-8">
               Полный каталог стоматологических услуг с прозрачными ценами. Без скрытых доплат.
             </p>
-          </AnimatedContent>
-
-          <AnimatedContent delay={400} animation="fade-up">
-            <div className="relative max-w-md">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-steel-400" />
-              <input
-                type="text"
-                placeholder="Поиск по услугам..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-white/70 backdrop-blur-sm border border-white/50 text-sm text-clinic-charcoal placeholder:text-steel-400 focus:outline-none focus:ring-2 focus:ring-clinic-blue/20 focus:border-clinic-blue/30 transition-all"
-              />
-            </div>
           </AnimatedContent>
         </div>
       </section>
@@ -167,7 +139,7 @@ export default function ServicesPage() {
       <section className="py-12 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16 lg:space-y-24">
-            {filteredCategories.map((cat, catIdx) => {
+            {SERVICE_CATEGORIES.map((cat, catIdx) => {
               const Icon = ICON_MAP[cat.icon];
               return (
                 <div key={cat.id} id={cat.id} className="scroll-mt-36">
