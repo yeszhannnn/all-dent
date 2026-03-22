@@ -3,7 +3,6 @@ import { TrustBar } from "@/components/sections/trust-bar";
 import { AdvantagesSection } from "@/components/sections/advantages";
 import { DirectionsSection } from "@/components/sections/directions";
 import { PricePreview } from "@/components/sections/price-preview";
-import { CasesPreview } from "@/components/sections/cases-preview";
 import { TreatmentSteps } from "@/components/sections/treatment-steps";
 import { ReviewsPreview } from "@/components/sections/reviews-preview";
 import { PromotionsSection } from "@/components/sections/promotions";
@@ -18,7 +17,6 @@ export default function HomePage() {
       <AdvantagesSection />
       <DirectionsSection />
       <PricePreview />
-      <CasesPreview />
       <TreatmentSteps />
       <ReviewsPreview />
       <PromotionsSection />

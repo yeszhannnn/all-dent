@@ -132,6 +132,10 @@ const config: Config = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "dir-card-in": {
+          from: { opacity: "0", transform: "translateY(14px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -142,6 +146,7 @@ const config: Config = {
         glow: "glow 4s ease-in-out infinite",
         "pulse-soft": "pulse-soft 3s ease-in-out infinite",
         gradient: "gradient 8s ease infinite",
+        "dir-card-in": "dir-card-in 0.55s ease-out both",
       },
     },
   },

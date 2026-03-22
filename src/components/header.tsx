@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ClinicLogo } from "@/components/clinic-logo";
 import {
   Sheet,
   SheetContent,
@@ -50,14 +51,14 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-clinic-blue to-steel-600 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                <span className="text-white font-bold text-sm">AD</span>
-              </div>
-              <div className="absolute -inset-1 rounded-xl bg-gradient-to-br from-clinic-blue/20 to-steel-600/20 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-clinic-blue/30 focus-visible:ring-offset-2 rounded-full"
+          >
+            <div className="relative h-10 w-10 shrink-0 transition-transform duration-300 group-hover:scale-105 sm:h-11 sm:w-11">
+              <ClinicLogo priority alt="ALL DENT — стоматология" />
             </div>
-            <span className="font-bold text-lg tracking-tight text-clinic-graphite">
+            <span className="font-display font-bold text-lg tracking-tight text-clinic-graphite">
               ALL DENT
             </span>
           </Link>
@@ -144,7 +145,10 @@ export function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px]">
-                <SheetTitle className="text-left font-bold text-lg">
+                <SheetTitle className="text-left font-bold text-lg flex items-center gap-2.5">
+                  <span className="relative block h-9 w-9 shrink-0">
+                    <ClinicLogo alt="" sizes="36px" />
+                  </span>
                   ALL DENT
                 </SheetTitle>
                 <nav className="flex flex-col gap-1 mt-8">

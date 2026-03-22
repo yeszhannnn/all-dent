@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CLINIC } from "@/data/clinic";
+import { ClinicLogo } from "@/components/clinic-logo";
 import { MessageCircle, Phone, Mail, MapPin, Instagram, Star } from "lucide-react";
 
 export function Footer() {
@@ -19,11 +20,15 @@ export function Footer() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-clinic-blue to-steel-500 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">AD</span>
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="relative h-10 w-10 shrink-0">
+                <ClinicLogo
+                  alt="ALL DENT"
+                  sizes="40px"
+                  src="/logo-footer-all-dent.png"
+                />
               </div>
-              <span className="font-bold text-lg text-white">ALL DENT</span>
+              <span className="font-display font-bold text-lg text-white">ALL DENT</span>
             </div>
             <p className="text-sm text-white/60 leading-relaxed">
               Современная стоматология в Астане. Имплантация, брекеты, лечение

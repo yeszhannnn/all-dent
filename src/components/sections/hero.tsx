@@ -11,6 +11,7 @@ import { FluidGlass } from "@/components/ui/fluid-glass";
 import { SparkleGrid } from "@/components/sparkle-grid";
 import { MessageCircle, ArrowDown, Sparkles, Star, Shield } from "lucide-react";
 import Link from "next/link";
+import { ClinicLogo } from "@/components/clinic-logo";
 
 export function HeroSection() {
   return (
@@ -31,8 +32,8 @@ export function HeroSection() {
         <div className="relative">
           <FluidGlass className="w-56 p-5 animate-float premium-shadow-lg">
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-clinic-blue to-steel-500 flex items-center justify-center">
-                <span className="text-white font-bold text-xs">AD</span>
+              <div className="relative h-10 w-10 shrink-0">
+                <ClinicLogo alt="ALL DENT" sizes="40px" />
               </div>
               <div>
                 <p className="text-sm font-semibold text-clinic-charcoal">ALL DENT</p>
