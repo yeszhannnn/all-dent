@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 26% 14%;
+    --card: 210 20% 98%;
+    --card-foreground: 220 26% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 14%;
+    --primary: 210 40% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 18% 96%;
+    --secondary-foreground: 220 26% 14%;
+    --muted: 210 18% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 18% 94%;
+    --accent-foreground: 220 26% 14%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 210 40% 52%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+  }
+  .glass-strong {
+    @apply bg-white/80 backdrop-blur-2xl border border-white/30;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-clinic-graphite via-clinic-blue to-steel-600;
+  }
+  .gradient-text-light {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-steel-700 to-clinic-blue;
+  }
+  .premium-shadow {
+    box-shadow: 0 4px 24px -2px rgba(91, 141, 184, 0.08),
+      0 2px 8px -2px rgba(0, 0, 0, 0.04);
+  }
+  .premium-shadow-lg {
+    box-shadow: 0 8px 40px -4px rgba(91, 141, 184, 0.12),
+      0 4px 16px -4px rgba(0, 0, 0, 0.06);
+  }
+  .premium-shadow-hover {
+    box-shadow: 0 12px 48px -4px rgba(91, 141, 184, 0.18),
+      0 6px 20px -4px rgba(0, 0, 0, 0.08);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(210, 18%, 96%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(215, 16%, 74%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(215, 16%, 60%);
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Premium shimmer effect for buttons */
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  animation: shimmer 3s linear infinite;
+}
+
+/* Selection color */
+::selection {
+  background-color: hsl(210, 40%, 52%);
+  color: white;
+}
+
+/* Focus rings */
+*:focus-visible {
+  outline: 2px solid hsl(210, 40%, 52%);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Premium link transitions */
+a {
+  transition: color 0.2s ease;
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
